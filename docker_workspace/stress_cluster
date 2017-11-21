@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ ! -f /root/.kube/config ]
+then
+  echo "[$(date)] I require a file... /root/.kube/config" >> /poseidon_activity.log
+  exit 0
+fi
+
+# deploy poseidon to kubernetes
+# .. replicate it to as many as defined
+# .. using starting command as start_stress
+# kubectl apply -f /deploy_poseidon.yaml
+
+sleep 180
+
+# kubectl delete deploy poseidon-tsunami
